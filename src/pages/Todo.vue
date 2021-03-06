@@ -1,6 +1,7 @@
 <template>
   <div>
     <input type="text" v-model="addGameTextInput" @keyup.enter="addGame()">
+    <input type="button" value="Ajouter" @click="addGame()">
     <list-item :items="gamesList" />
   </div>
 </template>
@@ -17,8 +18,10 @@ export default {
   },
   methods: {
     addGame () {
-      this.gamesList.push(this.addGameTextInput)
-      this.addGameTextInput = ''
+      if (this.addGameTextInput) {
+        this.gamesList.push(this.addGameTextInput)
+        this.addGameTextInput = ''
+      }
     }
   },
   components: {
