@@ -1,12 +1,12 @@
 <template>
-  <p>{{name}}</p>
+  <p>{{ game.name }}</p>
 </template>
 
 <script>
 export default {
     props: {
-        name: {
-            type: String,
+        game: {
+            type: Object,
             required: true
         }
     }
