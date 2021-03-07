@@ -32,7 +32,7 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 
 ### TODO (a todo list inside a todo app :D)
 
-- [ ] Use Vuex
+- [x] Use Vuex
 - [ ] Remove Items
 - [ ] Check Items as Done
 - [ ] Better looking
