@@ -6,14 +6,14 @@
 
 <script>
 import Item from "./Item.vue"
+import { mapState } from 'vuex'
 
 export default {
   components: { Item },
-  props: {
-    items: {
-      type: Array,
-      default : () => ([])
-    }
+  computed: {
+    ...mapState({
+      items: state => state.todo.listGames
+    }),
   }
 }
 </script>

@@ -2,13 +2,14 @@
   <div>
     <input type="text" v-model="addGameTextInput" @keydown="searchGame()">
     <p class="search" v-for="oneGame in searchResults" :key="oneGame.id" @click="addGame(oneGame)"> {{ oneGame.name }}</p>
-    <list-item :items="gamesList" />
+    <list-item />
   </div>
 </template>
 
 <script>
 import ListItem from '../components/List/ListItem.vue'
 import igdbApi from '../api/igdb'
+
 let timeout = null
 
 export default {
@@ -35,6 +36,7 @@ export default {
     },
     addGame (oneGame) {
       this.gamesList.push(oneGame)
+      this.$store.dispatch('addGameToList', oneGame)
       this.addGameTextInput = ''
       this.searchResults = []
     }
