@@ -34,7 +34,7 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 
 - [x] Use Vuex
 - [x] Remove Items
-- [ ] Check Items as Done
+- [x] Check Items as Done
 - [ ] Better looking
 - [ ] Create Proxy server for handling requests to igdb API
 - [ ] Export your database

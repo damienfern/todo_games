@@ -1,5 +1,9 @@
 <template>
-  <p>{{ game.name }} <input type="button" value="Supprimer" @click="deleteMeFromList(game)" /></p>
+  <p>
+    {{ game.name }}
+    <input type="button" value="Supprimer" @click="deleteMeFromList(game)" />
+    <input type="checkbox" :value="game.done" @input="changeGameStatus(game)"/>
+    </p>
 </template>
 
 <script>
@@ -15,7 +19,8 @@ export default {
   methods: {
      ...mapActions({
       // `mapActions` also supports payloads:
-      deleteMeFromList: 'todo/deleteGameFromList'
+      deleteMeFromList: 'todo/deleteGameFromList',
+      changeGameStatus: 'todo/changeGameStatus'
      }),
   }
 }
