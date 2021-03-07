@@ -33,7 +33,7 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 ### TODO (a todo list inside a todo app :D)
 
 - [x] Use Vuex
-- [ ] Remove Items
+- [x] Remove Items
 - [ ] Check Items as Done
 - [ ] Better looking
 - [ ] Create Proxy server for handling requests to igdb API
