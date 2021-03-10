@@ -1,7 +1,26 @@
 <template>
   <div>
-    <input type="text" v-model="addGameTextInput" @keydown="searchGame()">
-    <p class="search" v-for="oneGame in searchResults" :key="oneGame.id" @click="addGame(oneGame)"> {{ oneGame.name }}</p>
+    <v-container>
+      <v-row>
+        <v-col
+          cols="12"
+          md="4"
+        >
+          <v-text-field
+            v-model="addGameTextInput"
+            label="Jeu à ajouter"
+            @keydown="searchGame()"
+            required
+          ></v-text-field>
+          <v-card
+            v-for="oneGame in searchResults" :key="oneGame.id" @click="addGame(oneGame)"
+            elevation="4"
+          >
+            <v-card-text>{{ oneGame.name }}</v-card-text>
+          </v-card>
+        </v-col>
+      </v-row>
+    </v-container>
   </div>
 </template>
 
@@ -41,10 +60,5 @@ export default {
 </script>
 
 
-<style scoped>
-.search {
-  background-color: blue;
-  color: white;
-  cursor: pointer;
-}
+<style>
 </style>
