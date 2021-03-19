@@ -39,13 +39,31 @@ const getGamesByName = async function (gameName) {
     },
     queryMethod: 'body'
   })
-  .fields(['name', 'url', 'cover'])
+  .fields(['name', 'url', 'cover', 'summary', 'storyline'])
   .search(gameName)
   .where('version_parent = null')
   .limit(10)
   .request('/games/')
 }
 
+const getUrlCoverByCoverID = async function (coverID) {
+  // console.log(coverID);
+  return await apicalypse({
+    method: 'post',
+    baseURL: process.env.VUE_APP_IGDB_API,
+    headers: {
+      'Client-ID': clientId,
+      'Authorization': `Bearer ${token}`
+    },
+    queryMethod: 'body'
+  })
+    .fields(['url'])
+    .limit(1)
+    .where(`id = ${coverID}`)
+    .request('/covers/')
+}
+
 export default {
-  getGamesByName
+  getGamesByName,
+  getUrlCoverByCoverID
 }
